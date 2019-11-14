@@ -1,0 +1,19 @@
+{
+  "name": "kahoot",
+  "version": "1.0.0",
+  "description": "CSGames web tryout - kahoot clone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felixlapierre/kahoot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felixlapierre/kahoot/issues"
+  },
+  "homepage": "https://github.com/felixlapierre/kahoot#readme"
+}
