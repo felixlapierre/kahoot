@@ -12,7 +12,7 @@ router.get('/', function (req, res, next) {
     }
     else
     {
-        currentQuiz.addPlayer(req.body.username, req.body.token);
+        currentQuiz.addPlayer({name: req.body.username, token: req.body.token});
         console.log('Added user ' + req.body.username + ' to quiz.');
         res.send('You would be seeing a quiz right now if this code was finished');
     }
