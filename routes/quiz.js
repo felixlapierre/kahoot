@@ -25,4 +25,8 @@ router.post('/start', function(req, res, next) {
     res.send('Quiz ' + req.body.quizName + ' has been started');
 })
 
+router.post('/submit', function(req, res, next) {
+    
+})
+
 module.exports = {router: router};
