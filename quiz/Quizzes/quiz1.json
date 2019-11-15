@@ -1,0 +1,42 @@
+{
+    "title": "Ultimate Web quiz",
+    "quiz": [
+        {
+            "question" : "Which is the best kind of web?",
+            "options" : 
+            [
+                "world wide",
+                "Brichko",
+                "spider",
+                "anime"
+            ],
+            "indexOfCorrect" : 1,
+            "points" : 200
+        },
+        {
+            "question" : "Which is the best web programming language?",
+            "options" : 
+            [
+                "Javascript",
+                "Brichko",
+                "C#",
+                "Powerpoint"
+            ],
+            "indexOfCorrect" : 1 ,
+            "points" : 200
+        },
+        {
+            "question" : "Question 3",
+            "options" : 
+            [
+                "RIGHT",
+                "WRONG",
+                "WRONG",
+                "WRONG"
+            ],
+            "indexOfCorrect" : 0,
+            "points" : 200
+        }
+
+    ]
+}
