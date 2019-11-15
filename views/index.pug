@@ -1,0 +1,44 @@
+extends layout
+
+block content
+    div.text-center
+        form(class="form-signin" method="POST" action="/users/login")
+            #error
+                if error == "nologin"
+                    p.text-danger Failed to login. Check your username and password.
+                if error == 'nomike'
+                    p.text-danger Those who do not worship Great Leader will not be allowed to log in.
+            
+            #message
+                if message
+                    p.text-success Registration successful!
+            
+            - var h1Classes = ['h3', 'mb-3', 'font-weight-normal']
+            h1(class=h1Classes) Please sign in
+            
+            //-input username
+            label( for="inputUsername" class="sr-only") Username
+            input(type="text" name="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus)
+            
+            //-input password
+            label(for="inputPassword" class="sr-only") Password
+            input(type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required)
+            
+            //-Approve of dear leader
+            - var divClasses=['checkbox', 'mb-3'];
+            div(class=divClasses)
+                label
+                    input(type="checkbox" name="mike" id="inputMike" value="approve")
+                    span Mike Brichko is the greatest
+            
+            //-signIn button
+            - var buttonClass=['btn', 'btn-lg', 'btn-primary', 'btn-block'];
+            button(class=buttonClass type="submit") Sign in
+            - var pClasses=['mt-5', 'mb-3', 'text-muted'];
+            p(class=pClasses)
+    div.text-center
+        form(class="form-signin" method="GET" action="/users/register")
+            //-createAccount button
+            button(class=buttonClass type="register") Register
+
+            p(class=pClasses)

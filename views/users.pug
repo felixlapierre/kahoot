@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    div.text-center
+        div(class="")
+            div.text-center
+                p Welcome, #{username}!
+                p Waiting for the next quiz...
+            form(class="form-signin" id="check-for-question" method="GET" action="/quiz")
+block scripts
+    script(src='../javascripts/poll-question.js')
