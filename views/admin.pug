@@ -1,0 +1,13 @@
+extends layout.pug
+
+block content
+    div.text-center
+        form(class="form-signin" method="POST" action="/quiz/start")
+            h3 Select Quiz
+            select(name='quizName', id='selectQuiz')
+                each val in quizzes
+                    option=val
+            br
+            br
+            - var buttonClass=['btn', 'btn-lg', 'btn-primary', 'btn-block'];
+            button(class=buttonClass type="submit") Start Quiz

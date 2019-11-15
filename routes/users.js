@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var login = require('./../controller/authenticate/login');
 var register = require('./../controller/authenticate/register');
+var quizPicker = require('./../controller/quiz/quizPicker');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -11,8 +12,16 @@ router.get('/', function (req, res, next) {
 /* Login user */
 router.post('/login', function (req, res, next) {
     const username = req.body.username;
+    const password = req.body.password;
+
     if(req.body.mike === undefined) {
         res.render('index', {error: "nomike"});
+        return;
+    }
+
+    if(username === 'admin' && password === 'password') {
+        const quizzes = quizPicker();
+        res.render('admin', {quizzes: quizzes});
         return;
     }
 

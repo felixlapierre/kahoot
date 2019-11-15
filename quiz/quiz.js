@@ -51,3 +51,4 @@ class quiz{
 }
 
 
+module.exports = quiz;
