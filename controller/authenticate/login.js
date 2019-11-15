@@ -1,12 +1,12 @@
-var login = function(user,password) {
-    
-    if(user==="admin" && password==="password"){
-        return true;
-    }
-    else
+var fs = require('fs');
+var database = require("./users.json");
+
+var login = function(username, password){
+    if (database.hasOwnProperty(username))
     {
-        return false;
+        return (password === database[username]);
     }
+    return false;
 }
 
 module.exports=login;
