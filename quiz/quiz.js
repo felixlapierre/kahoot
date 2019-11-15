@@ -9,7 +9,12 @@ class quiz{
         this.name = contents["title"];
         this.questions = contents["quiz"];
         this.players = [];
+        this.currentIndex= 0;
         return this;
+    }
+
+    updateIndex(){
+      return this.currentIndex++;
     }
 
     addPlayer(playerInfo){

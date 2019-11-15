@@ -14,7 +14,8 @@ router.get('/', function (req, res, next) {
     {
         currentQuiz.addPlayer({name: req.body.username, token: req.body.token});
         console.log('Added user ' + req.body.username + ' to quiz.');
-        res.send('You would be seeing a quiz right now if this code was finished');
+        res.render('quiz', currentQuiz['questions'][currentQuiz.currentIndex]);
+        //res.send('You would be seeing a quiz right now if this code was finished');
     }
 });
 
