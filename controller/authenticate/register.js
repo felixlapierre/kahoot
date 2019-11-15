@@ -1,10 +1,13 @@
+var fs = require('fs');
+var database = require("./users.json");
+
 var register = function(username, password){
         if (database.hasOwnProperty(username))
         {
             return false;
         }
         database[username] = password;
-        fs.writeFileSync("./authentication/users.json",JSON.stringify(database))
+        fs.writeFileSync("./controller/authenticate/users.json",JSON.stringify(database))
         return true;
 }
 
