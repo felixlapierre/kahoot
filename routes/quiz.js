@@ -27,7 +27,12 @@ router.post('/start', function(req, res, next) {
 })
 
 router.post('/submit', function(req, res, next) {
-    
+    console.log("answer"+ req.body.answer);
+    console.log(" and correct is "+ currentQuiz['questions'][currentQuiz.currentIndex]['indexOfCorrect']);
+    if (req.body.answer ==currentQuiz['questions'][currentQuiz.currentIndex]['indexOfCorrect']) {
+         res.send("that's correct \n you have "+currentQuiz['questions'][currentQuiz.currentIndex]['points']+" points");
+        }
+    else res.send("sucker \n you have 0 points");
 })
 
 module.exports = {router: router};
