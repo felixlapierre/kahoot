@@ -10,6 +10,10 @@ router.get('/', function (req, res, next) {
 /* Login user */
 router.post('/login', function (req, res, next) {
     const username = req.body.username;
+    if(req.body.mike === undefined) {
+        res.render('index', {error: "nomike"});
+        return;
+    }
 
     let loginResult = login(username, req.body.password);
     
@@ -17,7 +21,7 @@ router.post('/login', function (req, res, next) {
         res.render('users', {username: username});
     }
     else {
-        res.render('index', {error: true});
+        res.render('index', {error: "nologin"});
     }
 });
 
